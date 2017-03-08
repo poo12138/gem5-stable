@@ -1,0 +1,21 @@
+#
+# -------------------------------------------------------------------------------------------------
+#  This file is a part of the GEM5 LIBRARY from LIRMM
+#  Copyright (C) 2012 BUTKO Anastasiia <butko@lirmm.fr>
+# -------------------------------------------------------------------------------------------------
+#  
+#  Author: Butko Anastasiia
+# -------------------------------------------------------------------------------------------------
+#
+
+Import('*')
+
+SimObject('TraceModel.py')
+SimObject('TraceArbiter.py')
+
+Source('tracemodel.cc')
+Source('tracearbiter.cc')
+
+DebugFlag('TraceModelFlag')
+DebugFlag('TraceMissDelay')
+DebugFlag('LoosedPkts')
