@@ -79,7 +79,7 @@ starts_4th_v3 = [	9898251694000,
 				9898823887500]
 					
 # System
-sys0 = makeArmSystem(mem_mode, "RealView_PBX", SysConfig(disk='/home/n/LIRMM/dist/m5/system/disks/linux-arm-ael.img'), False)
+sys0 = makeArmSystem(mem_mode, "RealView_PBX", SysConfig(disk='/home/poo/gem5_extras/system/disks/linux-arm-ael.img'), False)
 
 # Trace CPUs
 sys0.cpu = [TraceModel(trace_file=traces_4th_v2[i], trace_id=i, start_tick=starts_4th_v2[i], addr_shift = 0x000) for i in xrange(np)]
