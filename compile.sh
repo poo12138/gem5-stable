@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-scons build/ARM/gem5.opt -j4
+scons build/ARM/gem5.opt
