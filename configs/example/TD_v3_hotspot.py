@@ -58,20 +58,20 @@ mem_mode = 'timing'
 
 np = 4
 
-traces_4th_v2 = [	'../traces/hotspot/4th_32kb_1s_3ns_30ns_2ghz_0_v2.tra',
-				'../traces/hotspot/4th_32kb_1s_3ns_30ns_2ghz_1_v2.tra',
-				'../traces/hotspot/4th_32kb_1s_3ns_30ns_2ghz_2_v2.tra',
-				'../traces/hotspot/4th_32kb_1s_3ns_30ns_2ghz_3_v2.tra']
+traces_4th_v2 = [	'../gem5_extras/traces/hotspot/4th_32kb_1s_3ns_30ns_2ghz_0_v2.tra',
+				'../gem5_extras/traces/hotspot/4th_32kb_1s_3ns_30ns_2ghz_1_v2.tra',
+				'../gem5_extras/traces/hotspot/4th_32kb_1s_3ns_30ns_2ghz_2_v2.tra',
+				'../gem5_extras/traces/hotspot/4th_32kb_1s_3ns_30ns_2ghz_3_v2.tra']
 
 starts_4th_v2 = [	9836891284000,
 					9837357615000,
 					9837461823000,
 					9836888949000]
 
-traces_4th_v3 = [	'../traces/hotspot/4th_32kb_1s_3ns_30ns_2ghz_0_v3.tra',
-				'../traces/hotspot/4th_32kb_1s_3ns_30ns_2ghz_1_v3.tra',
-				'../traces/hotspot/4th_32kb_1s_3ns_30ns_2ghz_2_v3.tra',
-				'../traces/hotspot/4th_32kb_1s_3ns_30ns_2ghz_3_v3.tra']
+traces_4th_v3 = [	'../gem5_extras/traces/hotspot/4th_32kb_1s_3ns_30ns_2ghz_0_v3.tra',
+				'../gem5_extras/traces/hotspot/4th_32kb_1s_3ns_30ns_2ghz_1_v3.tra',
+				'../gem5_extras/traces/hotspot/4th_32kb_1s_3ns_30ns_2ghz_2_v3.tra',
+				'../gem5_extras/traces/hotspot/4th_32kb_1s_3ns_30ns_2ghz_3_v3.tra']
 
 starts_4th_v3 = [	9898251694000,
 				9898588551500,
@@ -79,7 +79,7 @@ starts_4th_v3 = [	9898251694000,
 				9898823887500]
 					
 # System
-sys0 = makeArmSystem(mem_mode, "RealView_PBX", SysConfig(disk='/home/poo/gem5_extras/system/disks/linux-arm-ael.img'), False)
+sys0 = makeArmSystem(mem_mode, "RealView_PBX", SysConfig(disk='../gem5_extras/system/disks/linux-arm-ael.img'), False)
 
 # Trace CPUs
 sys0.cpu = [TraceModel(trace_file=traces_4th_v2[i], trace_id=i, start_tick=starts_4th_v2[i], addr_shift = 0x000) for i in xrange(np)]
