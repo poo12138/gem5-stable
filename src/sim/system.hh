@@ -249,6 +249,8 @@ class System : public MemObject
      * loadAddrMask.
      */
     Addr loadAddrOffset;
+    
+    int eof_count;
 
   protected:
     uint64_t nextPID;

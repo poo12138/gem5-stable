@@ -52,6 +52,7 @@ TraceModel::TraceModel(const Params *p)
       icachePort("icache_port", this),
       dcachePort("dcache_port", this),
       arbiterPort("arbiter_port", this),
+      system(p->system),
       traceFile(p->trace_file),
       traceId(p->trace_id),
       startTick(p->start_tick),
@@ -531,11 +532,20 @@ TraceModel::getValue()
 			thread_line = false;
 		}
 	}
-	
+
 	if(data.find("!") < 10)	{
 		eof = true;
 		warn("End of file cpu # %d. Tick: %d Number of sent pkts: %d Number of received pkts: %d, Global shift: %d", systemID, curTick(), sent-1, recived, shift);
 		infile.close();
+		
+		this->system->eof_count++;
+		
+		
+		if(this->system->eof_count>=4){
+		Stats::dump();
+		exit(0);
+	    }
+	    
 		return 0; 
 	}
 	else if(!thread_line){

@@ -40,6 +40,8 @@ class TraceModel : public MemObject
 	int systemID;
 	int cpu_number;
 	
+	System *system;
+	
 	struct StateFlags {
 		uint32_t thread_event;				
 		bool done;

@@ -96,7 +96,8 @@ System::System(Params *p)
       numWorkIds(p->num_work_ids),
       _params(p),
       totalNumInsts(0),
-      instEventQueue("system instruction-based event queue")
+      instEventQueue("system instruction-based event queue"),
+      eof_count(0)
 {
     // add self to global system list
     systemList.push_back(this);
