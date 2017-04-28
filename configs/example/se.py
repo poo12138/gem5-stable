@@ -53,12 +53,14 @@ from m5.util import addToPath, fatal
 
 addToPath('../common')
 addToPath('../ruby')
+addToPath('../topologies')
 
 import Options
 import Ruby
 import Simulation
 import CacheConfig
 import MemConfig
+import Mesh
 from Caches import *
 from cpu2000 import *
 
@@ -262,3 +264,4 @@ else:
 
 root = Root(full_system = False, system = system)
 Simulation.run(options, root, system, FutureClass)
+
